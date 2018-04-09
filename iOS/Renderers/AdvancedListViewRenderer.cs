@@ -14,10 +14,7 @@ namespace FBPlay.iOS
         void Control_Scrolled(object sender, EventArgs e)
         {
             var advancedListView = this.Element as AdvancedListView;
-            if (advancedListView != null && advancedListView.Scrolled != null)
-            {
-                advancedListView.Scrolled(new Xamarin.Forms.Point(Control.ContentOffset.X, Control.ContentOffset.Y));
-            }
+            advancedListView?.Scrolled?.Invoke(new Xamarin.Forms.Point(Control.ContentOffset.X, Control.ContentOffset.Y));
         }
 
         public AdvancedListViewRenderer()
